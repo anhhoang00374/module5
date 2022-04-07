@@ -1,0 +1,35 @@
+<form action="" [formGroup]="grSignup">
+  <label >Email</label>
+  <input type="text"  formControlName="email" placeholder="Input email"><br>
+  <p *ngIf="grSignup.controls.email?.errors && grSignup.controls.email?.touched" >This field must be email and not null</p>
+  <label>Password</label>
+  <input type="text" formControlName="password" placeholder="input password" [(ngModel)]="password"><br>
+  <p *ngIf="grSignup.controls.password?.errors && grSignup.controls.password?.touched">This field min length is 6</p>
+  <label >confirm password</label>
+  <input type="text" formControlName="configPassword" placeholder="input password"><br>
+  <p *ngIf="grSignup.controls.configPassword?.errors && grSignup.controls.configPassword?.touched">This field min length is 6 and equal password</p>
+  <label >country</label>
+  <select formControlName="country" >
+    <option *ngFor="let c of country; let i = index" >
+      {{c}}
+    </option>
+  </select>
+  <p *ngIf="grSignup.controls.country?.errors && grSignup.controls.country?.touched">This field must be not null</p>
+  <br>
+  <label >Age</label>
+  <input type="text" formControlName="age" placeholder="input age"><br>
+  <p *ngIf="grSignup.controls.age?.errors && grSignup.controls.age?.touched">This field of value must be than 18</p>
+  <label>Gender</label><br>
+  <label> Man</label><input formControlName="gender" value="Man" checked="checked" type="radio">
+  <label> Woman</label><input formControlName="gender" value="Woman" type="radio" >
+  <label> Other</label><input formControlName="gender" value="other" type="radio" ><br>
+  <p *ngIf="grSignup.controls.gender?.errors && grSignup.controls.gender?.touched">This field must be not null</p>
+  <label> Phone</label>
+  <input type="text" formControlName="phone"><br>
+  <p *ngIf="grSignup.controls.phone?.errors && grSignup.controls.phone?.touched">This field must be stared +84 and be end with 9 or 10 digits</p>
+
+  <button [disabled]="grSignup.invalid">Sign up</button>
+
+</form>
+<p>{{grSignup.value|json}}</p>
+

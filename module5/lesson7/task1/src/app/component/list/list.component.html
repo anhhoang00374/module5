@@ -1,0 +1,9 @@
+<p>List words</p>
+<br>
+<ng-container *ngFor="let work of listWord;let i = index">
+  <span>{{i+1}}.</span> <button routerLink="mean/{{work.id}}">{{work.vn}}</button>
+  <br><br>
+
+</ng-container>
+
+

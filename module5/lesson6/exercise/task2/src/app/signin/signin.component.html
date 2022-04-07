@@ -1,0 +1,15 @@
+<form action="" [formGroup]="user">
+  <label>Email: </label><br>
+  <input type="text" formControlName="email"><br>
+  <p *ngIf="user.controls.email?.errors&& user.controls.email?.touched">
+    This field must be not null and must be email.
+  </p>
+  <label> Password: </label>
+  <input type="password" formControlName="password"><br>
+  <p *ngIf="user.controls.password?.errors&& user.controls.password?.touched">
+    This field must be not null and must be email.
+  </p>
+  <button [disabled]="user.invalid" >Sign in</button>
+</form>
+<p>{{user.value|json}}</p>
+
