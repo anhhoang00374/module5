@@ -37,4 +37,16 @@ export class IProductService {
   getAll() {
     return this.products;
   }
+  addNew(product: Product){
+    this.products.push(product);
+  }
+  // @ts-ignore
+  getById(id: number): Product{
+    // tslint:disable-next-line:prefer-for-of
+    for ( let i = 0; i < this.products.length; i++) {
+      if ( this.products[i].id === id){
+        return this.products[i];
+      }
+    }
+  }
 }

@@ -123,6 +123,6 @@
   },
   "defaultProject": "task2",
   "cli": {
-    "analytics": "a6bbc48a-c37a-434a-a631-edacd0e86345"
+    "analytics": false
   }
 }
